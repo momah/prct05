@@ -5,7 +5,7 @@ Introducción
 ------------
 
 
-Un número racional es un número con un numerador y un denominador de la forma 
+Un número racional es un número con un numerexitador y un denominador de la forma 
 
 ![a/b](assets/images/rational.jpeg)
 
@@ -15,7 +15,8 @@ Un número racional no puede tener un cero como denominador, pero si se admite u
 
 Cada número entero `a` es equivalente al número racional `a/1`.
 
-Los números racionales se utilizan en el cálculo exacto en el que intervienen fracciones. Por ejemplo, `1/3 = 0.33333...` no se puede representar de forma precisa utilizando el formato de punto flotante.  Para obtener resultados exactos, se deben utilizar entonces números racionales.
+Los números racionales se utilizan en el cálculo exacto en el que intervienen fracciones. Por ejemplo, `1/3 = 0.33333...` 
+no se puede representar de forma precisa utilizando el formato de punto flotante.  Para obtener resultados exactos, se deben utilizar entonces números racionales.
 
 Los números racionales pueden ser equivalentes, por ejemplo, `1/3 = 2/6 = 3/9 = 4/12`. Por convenio, se utiliza un `1/3` para representar a todos los números racionales que son equivalentes a `1/3`.
 El numerador y el denominador de `1/3` sólo tienen como divisor común al número 1, por lo tanto, se dice que `1/3` está reducida a su mínima expresión.
@@ -62,6 +63,47 @@ común divisor. Haciendo uso del depurador de ruby detecte el error en el códig
   * Para ver dónde se está:
 
                  (rdb:1) w
+
+
+
+
+
+
+
+============ EJECUTANDO ========================
+alu4543@cc342:~/datos/homes.rala/LPP/prct05$ ruby -rdebug gcd.rb
+Debug.rb
+Emacs support available.
+
+gcd.rb:7:def gcd(u, v)
+(rdb:1) n
+gcd.rb:15:puts gcd(6,3)
+(rdb:1) b 4
+Set breakpoint 1 at gcd.rb:4
+(rdb:1) w
+--> #1 gcd.rb:9
+(rdb:1) n
+6
+
+================SOLUCION =======================
+se ha ido a la ultima linea y ha ejecutado
+sin entrar en el bucle while.
+El bucle While dice que mientra el denominador igual a 0 ejecuta el codigo.
+mientras el denominador no puede ser 0.
+
+El while debe ser así:	while v > 0
+
+================================================
+
+
+
+
+
+
+
+
+
+
 2. Implemente una clase Ruby para representar los números racionales.
     Cada objeto debe representar un número racional reducido a su mínima expresión.
     Se han de implementar los métodos de instancia que se solicitan a continuación:
